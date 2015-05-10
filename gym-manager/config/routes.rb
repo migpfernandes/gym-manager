@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   	end
  end
 
- resources :students do
+ resources :students, only: [:create, :index, :show, :update, :destroy] do
  end
 
- resources :trainers, only: [:create, :index, :show, :update] do
+ resources :trainers, only: [:create, :index, :show, :update, :destroy] do
  end
 
  resources :workgroups do
