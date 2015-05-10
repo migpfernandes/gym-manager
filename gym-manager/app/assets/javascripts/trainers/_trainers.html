@@ -1,0 +1,17 @@
+<div ng-repeat="trainer in trainers | orderBy: 'name'">
+	<span>
+		{{trainer.idDocument}}
+	</span>
+	<span>
+		{{trainer.name}}
+	</span>	
+	<span>
+		<a href="#/trainers/{{trainer.id}}">Edit</a>
+	</span>
+	<span ng-click="deleteTrainer(trainer.id)">
+		Delete
+	</span>	
+</div>
+<span>
+	<a class="btn btn-primary" ui-sref="trainers_new">New</a>
+</span>

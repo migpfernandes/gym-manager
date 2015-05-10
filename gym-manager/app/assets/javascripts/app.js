@@ -55,6 +55,36 @@ angular.module('gymManager', ['ui.router','templates'])
 					}]
 				}
 			})
+			.state('trainers', {
+				url: '/trainers',
+				templateUrl: 'trainers/_trainers.html',
+				controller: 'TrainersCtrl',
+				resolve: {
+					studentPromise: ['trainers', function(trainers){
+						return trainers.getAll();
+					}]
+				}
+			})
+			.state('trainers_new', {
+				url: '/trainers/new',
+				templateUrl: 'trainers/_trainers_new.html',
+				controller: 'TrainersEditCtrl',
+				resolve: {
+					trainer: ['$stateParams', 'trainers', function($stateParams, trainers){
+						return trainers.getNew();
+					}]
+				}
+			})
+			.state('trainers_edit', {
+				url: '/trainers/{id}',
+				templateUrl: 'trainers/_trainers_edit.html',
+				controller: 'TrainersEditCtrl',
+				resolve: {
+					trainer: ['$stateParams', 'trainers', function($stateParams, trainers){
+						return trainers.get($stateParams.id);
+					}]
+				}
+			})			
 			;
 
 			$urlRouterProvider.otherwise('home');

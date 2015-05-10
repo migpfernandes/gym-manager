@@ -1,0 +1,20 @@
+<form ng-submit="addTrainer()" style="margin-top:30px;">
+	<h3>Add a new trainer</h3>
+
+	<div class="form-group">
+		<input type="text" 
+					class="form-control" 
+					placeholder="Name" 
+					ng-model="trainer.name"></input>
+	</div>
+	<div class="form-group">
+		<input type="text" 
+					class="form-control" 
+					placeholder="Id Document number" 
+					ng-model="trainer.idDocument"></input>
+	</div>
+	<button type="submit" class="btn btn-primary">Create</button>
+	<span >
+		<a class="btn btn-primary" ui-sref="trainers">Back</a>
+	</span>
+</form>
