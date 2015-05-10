@@ -74,14 +74,14 @@ ActiveRecord::Schema.define(version: 20150509144556) do
 
   add_index "trainers_workgroups", ["trainer_id", "workgroup_id"], name: "index_trainers_workgroups_on_trainer_id_and_workgroup_id"
 
-  create_table "work_groups", force: true do |t|
+  create_table "workgroups", force: true do |t|
     t.string   "name"
     t.integer  "classtype_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "work_groups", ["classtype_id"], name: "index_work_groups_on_classtype_id"
-  add_index "work_groups", ["name"], name: "index_work_groups_on_name", unique: true
+  add_index "workgroups", ["classtype_id"], name: "index_workgroups_on_classtype_id"
+  add_index "workgroups", ["name"], name: "index_workgroups_on_name", unique: true
 
 end

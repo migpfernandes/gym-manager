@@ -19,6 +19,9 @@ Rails.application.routes.draw do
  resources :trainers, only: [:create, :index, :show, :update, :destroy] do
  end
 
- resources :workgroups do
+ resources :workgroups, only: [:create, :index, :show, :update, :destroy] do
+ end
+
+ resources :classtypes, only: [:index] do
  end
 end

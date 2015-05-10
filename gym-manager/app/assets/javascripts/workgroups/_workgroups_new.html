@@ -1,0 +1,14 @@
+<form ng-submit="addWorkgroup()" style="margin-top:30px;">
+	<h3>Add a new workgroup</h3>
+
+	<div class="form-group">
+		<input type="text" 
+					class="form-control" 
+					placeholder="Name" 
+					ng-model="workgroup.name"></input>
+	</div>
+	<button type="submit" class="btn btn-primary">Create</button>
+	<span >
+		<a class="btn btn-primary" ui-sref="workgroups">Back</a>
+	</span>
+</form>

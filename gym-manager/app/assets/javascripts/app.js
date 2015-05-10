@@ -25,6 +25,7 @@ angular.module('gymManager', ['ui.router','templates'])
 					}]
 				}
 			})
+			//Student states			
 			.state('students', {
 				url: '/students',
 				templateUrl: 'students/_students.html',
@@ -55,6 +56,7 @@ angular.module('gymManager', ['ui.router','templates'])
 					}]
 				}
 			})
+			//Trainer states
 			.state('trainers', {
 				url: '/trainers',
 				templateUrl: 'trainers/_trainers.html',
@@ -84,7 +86,38 @@ angular.module('gymManager', ['ui.router','templates'])
 						return trainers.get($stateParams.id);
 					}]
 				}
-			})			
+			})		
+			//Workgroup states
+			.state('workgroups', {
+				url: '/workgroups',
+				templateUrl: 'workgroups/_workgroups.html',
+				controller: 'WorkgroupsCtrl',
+				resolve: {
+					workgroupPromise: ['workgroups', function(workgroups){
+						return workgroups.getAll();
+					}]
+				}
+			})
+			.state('workgroups_new', {
+				url: '/workgroups/new',
+				templateUrl: 'workgroups/_workgroups_new.html',
+				controller: 'WorkgroupsEditCtrl',
+				resolve: {
+					workgroup: ['$stateParams', 'workgroups', function($stateParams, workgroups){
+						return workgroups.getNew();
+					}]
+				}
+			})
+			.state('workgroups_edit', {
+				url: '/workgroups/{id}',
+				templateUrl: 'workgroups/_workgroups_edit.html',
+				controller: 'WorkgroupsEditCtrl',
+				resolve: {
+					workgroup: ['$stateParams', 'workgroups', function($stateParams, workgroups){
+						return workgroups.get($stateParams.id);
+					}]
+				}
+			})					
 			;
 
 			$urlRouterProvider.otherwise('home');

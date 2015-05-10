@@ -1,0 +1,14 @@
+<div ng-repeat="workgroup in workgroups | orderBy: 'name'">
+	<span>
+		{{workgroup.name}}
+	</span>	
+	<span>
+		<a href="#/workgroups/{{workgroup.id}}">Edit</a>
+	</span>
+	<span ng-click="deleteWorkgroup(workgroup.id)">
+		Delete
+	</span>	
+</div>
+<span>
+	<a class="btn btn-primary" ui-sref="workgroups_new">New</a>
+</span>
