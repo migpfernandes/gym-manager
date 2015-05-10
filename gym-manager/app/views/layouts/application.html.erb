@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GymManager</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+  	<title>Gym Manager</title>
+  	<%= stylesheet_link_tag    'application', media: 'all' %>
+  	<%= javascript_include_tag 'application' %>
+  	<%= csrf_meta_tags %>
+	</head>
+	<body ng-app="gymManager">
+		<div class="page-header">
+			<h1>Gym Manager</h1>
+		</div>
 
-<%= yield %>
-
-</body>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<ui-view></ui-view>
+			</div>
+		</div>
+	</body>
 </html>

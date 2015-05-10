@@ -1,0 +1,17 @@
+<div ng-repeat="student in students | orderBy: 'name'">
+	<span>
+		{{student.idDocument}}
+	</span>
+	<span>
+		{{student.name}}
+	</span>	
+	<span>
+		<a href="#/students/{{student.id}}">Edit</a>
+	</span>
+	<span ng-click="deleteStudent(student.id)">
+		Delete
+	</span>	
+</div>
+<span>
+	<a class="btn btn-primary" ui-sref="students_new">New</a>
+</span>
