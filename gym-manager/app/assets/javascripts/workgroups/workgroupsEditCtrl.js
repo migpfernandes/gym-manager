@@ -4,6 +4,7 @@ angular.module('gymManager')
 'workgroups',
 'workgroup',
 function($scope, workgroups, workgroup){
+	$scope.classtypes = workgroups.classtypes;
 	$scope.workgroups = workgroups.workgroups;
 	$scope.workgroup = workgroup;
 	$scope.addWorkgroup = function(){

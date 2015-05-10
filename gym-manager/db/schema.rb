@@ -13,13 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20150509144556) do
 
-  create_table "class_types", force: true do |t|
+  create_table "classtypes", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "class_types", ["name"], name: "index_class_types_on_name", unique: true
+  add_index "classtypes", ["name"], name: "index_classtypes_on_name", unique: true
 
   create_table "comments", force: true do |t|
     t.string   "body"
@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(version: 20150509144556) do
 
   create_table "workgroups", force: true do |t|
     t.string   "name"
-    t.integer  "classtype_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "classtype_id"
   end
 
   add_index "workgroups", ["classtype_id"], name: "index_workgroups_on_classtype_id"

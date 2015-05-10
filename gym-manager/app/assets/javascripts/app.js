@@ -105,6 +105,9 @@ angular.module('gymManager', ['ui.router','templates'])
 				resolve: {
 					workgroup: ['$stateParams', 'workgroups', function($stateParams, workgroups){
 						return workgroups.getNew();
+					}],
+					classtypes: ['workgroups', function(workgroups){
+						return workgroups.getAllClasstypes();
 					}]
 				}
 			})
@@ -115,6 +118,9 @@ angular.module('gymManager', ['ui.router','templates'])
 				resolve: {
 					workgroup: ['$stateParams', 'workgroups', function($stateParams, workgroups){
 						return workgroups.get($stateParams.id);
+					}],
+					classtypes: ['workgroups', function(workgroups){
+						return workgroups.getAllClasstypes();
 					}]
 				}
 			})					

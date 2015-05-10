@@ -5,6 +5,6 @@ class Workgroup < ActiveRecord::Base
   has_and_belongs_to_many :trainers
 
   def as_json(options = {})
-  	super(options.merge({:include => {:students => {}, :trainers => {}, :classtype  => {}}}))
+  	super(options.merge({:include => {:students => {}, :trainers => {}, :classtype => {}}}))
   end
 end

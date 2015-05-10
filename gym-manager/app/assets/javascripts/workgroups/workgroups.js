@@ -3,11 +3,17 @@ angular.module('gymManager')
 	'$http',
 	function($http){
 		var o = {
-			workgroups: []
+			workgroups: [],
+			classtypes: []
 		};
 		o.getAll = function(){
 			return $http.get('/workgroups.json').success(function(data){
 				angular.copy(data, o.workgroups);
+			});
+		};
+		o.getAllClasstypes = function(){
+			return $http.get('/classtypes.json').success(function(data){
+				angular.copy(data, o.classtypes);
 			});
 		};
 		o.create = function(workgroup) {

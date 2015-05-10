@@ -7,6 +7,14 @@
 					placeholder="Name" 
 					ng-model="workgroup.name"></input>
 	</div>
+	<div>
+		<select ng-model="workgroup.classtype_id" 
+				ng-options="item.id as item.name for item in classtypes"
+				class="form-control">
+    	<option value="">Select Class type</option>
+		</select>
+	</div>
+	<br>
 	<button type="submit" class="btn btn-primary">Save</button>
 	<span >
 		<a class="btn btn-primary" ui-sref="workgroups">Back</a>

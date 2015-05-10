@@ -1,5 +1,5 @@
 class ClasstypesController < ApplicationController
 	def index
-		respond_with ClassType.all
+		respond_with Classtype.all
 	end
 end

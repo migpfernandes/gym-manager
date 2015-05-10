@@ -26,7 +26,7 @@ class WorkgroupsController < ApplicationController
 
 	private
 	def workgroup_params
-		params.require(:trainer).permit(:name,:idDocument)
+		params.require(:workgroup).permit(:name,:classtype_id)
 	end	
 
 end
