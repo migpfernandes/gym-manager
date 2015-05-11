@@ -11,5 +11,6 @@
  * file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap
+ *= require angular-multi-select-master/isteven-multi-select
  *= require_tree .
  */

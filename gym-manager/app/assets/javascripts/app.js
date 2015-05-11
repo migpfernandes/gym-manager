@@ -1,4 +1,4 @@
-angular.module('gymManager', ['ui.router','templates'])
+angular.module('gymManager', ['ui.router','templates','isteven-multi-select'])
 .config([
 	'$stateProvider',
 	'$urlRouterProvider',

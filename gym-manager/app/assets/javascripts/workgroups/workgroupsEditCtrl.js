@@ -15,4 +15,11 @@ function($scope, workgroups, workgroup){
 		if(!workgroup.name || workgroup.name === '') { return; }
 		workgroups.update(workgroup.id, workgroup);
 	};
+	$scope.modernBrowsers = [
+    { name: "Opera",              maker: "(Opera Software)",        ticked: true  },
+    { name: "Internet Explorer",  maker: "(Microsoft)",             ticked: false },
+    { name: "Firefox",            maker: "(Mozilla Foundation)",    ticked: true  },
+    { name: "Safari",             maker: "(Apple)",                 ticked: false },
+    { name: "Chrome",             maker: "(Google)",                ticked: true  }
+	]; 
 }]);
