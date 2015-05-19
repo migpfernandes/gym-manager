@@ -15,6 +15,30 @@
 		</select>
 	</div>
 	<br>
+	<h6>Select trainers</h6>
+	<div class="form-control"  
+      isteven-multi-select
+      input-model="trainers"
+      output-model="selectedTrainers"
+      button-label="name"
+      item-label="name"
+      tick-property="ticked"
+      style="height:100%;width:100%;padding:0px">
+  </div>
+  <br>
+
+  <h6>Select students</h6>
+  <div class="form-control"  
+      isteven-multi-select
+      input-model="students"
+      output-model="selectedStudents"
+      button-label="name"
+      item-label="name"
+      tick-property="ticked"
+      style="height:100%;width:100%;padding:0px">
+  </div>
+  <br>
+
 	<button type="submit" class="btn btn-primary">Save</button>
 	<span >
 		<a class="btn btn-primary" ui-sref="workgroups">Back</a>

@@ -108,6 +108,12 @@ angular.module('gymManager', ['ui.router','templates','isteven-multi-select'])
 					}],
 					classtypes: ['workgroups', function(workgroups){
 						return workgroups.getAllClasstypes();
+					}],
+					trainers: ['workgroups', function(workgroups){
+						return workgroups.getAllTrainers();
+					}],
+					students: ['workgroups', function(workgroups){
+						return workgroups.getAllStudents();
 					}]
 				}
 			})
@@ -121,6 +127,12 @@ angular.module('gymManager', ['ui.router','templates','isteven-multi-select'])
 					}],
 					classtypes: ['workgroups', function(workgroups){
 						return workgroups.getAllClasstypes();
+					}],
+					trainers: ['workgroups', function(workgroups){
+						return workgroups.getAllTrainers();
+					}],
+					students: ['workgroups', function(workgroups){
+						return workgroups.getAllStudents();
 					}]
 				}
 			})					

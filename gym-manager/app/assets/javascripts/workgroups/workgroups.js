@@ -4,7 +4,9 @@ angular.module('gymManager')
 	function($http){
 		var o = {
 			workgroups: [],
-			classtypes: []
+			classtypes: [],
+			trainers: [],
+			students: []
 		};
 		o.getAll = function(){
 			return $http.get('/workgroups.json').success(function(data){
@@ -16,6 +18,16 @@ angular.module('gymManager')
 				angular.copy(data, o.classtypes);
 			});
 		};
+		o.getAllTrainers = function(){
+			return $http.get('/trainers.json').success(function(data){
+				angular.copy(data, o.trainers);
+			});
+		};
+		o.getAllStudents = function(){
+			return $http.get('/students.json').success(function(data){
+				angular.copy(data, o.students);
+			});
+		};		
 		o.create = function(workgroup) {
 			return $http.post('/workgroups.json', workgroup).success(function(data){
 				o.workgroups.push(data);
